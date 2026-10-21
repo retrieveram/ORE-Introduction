@@ -1,0 +1,61 @@
+<ORE>
+  <Setup>
+    <Parameter name=  "asofDate">2022-08-19</Parameter>
+    <Parameter name= "inputPath">Input</Parameter>
+    <Parameter name="outputPath">Output</Parameter>
+    <Parameter name=   "logFile">log.txt</Parameter>
+
+    <!-- Txtファイル -->
+    <Parameter name=    "marketDataFile">market.txt</Parameter>
+    <Parameter name=    "fixingDataFile">fixings.txt</Parameter>
+    <Parameter name="implyTodaysFixings">N</Parameter>
+    <!-- xmlファイル -->
+    <Parameter name=   "conventionsFile">conventions.xml</Parameter>
+    <Parameter name=   "curveConfigFile">crvConfig.xml</Parameter>
+    <Parameter name=  "marketConfigFile">tdyMarket.xml</Parameter>
+    <Parameter name=     "portfolioFile">ois-1y.xml,ois-2y.xml</Parameter>
+    <Parameter name="pricingEnginesFile">prcEngine.xml</Parameter>
+  </Setup>
+
+  <Analytics>
+    <Analytic type="npv">
+      <Parameter name=        "active">Y</Parameter>
+      <Parameter name=  "baseCurrency">JPY</Parameter>
+      <Parameter name="outputFileName">npv.csv</Parameter>
+    </Analytic>
+    <Analytic type="curves">
+      <Parameter name=        "active">Y</Parameter>
+      <Parameter name=          "grid">800,1D</Parameter>
+      <Parameter name="outputFileName">curves.csv</Parameter>
+    </Analytic>
+    <Analytic type="simulation">
+      <Parameter name=        "active">Y</Parameter>
+      <Parameter name=  "baseCurrency">JPY</Parameter>
+      <!-- xmlファイル -->
+      <Parameter name="simulationConfigFile">simConfig.xml</Parameter>
+      <!-- csvファイル -->
+      <Parameter name=
+         "aggregationScenarioDataFileName">senaData.csv.gz</Parameter>
+      <Parameter name=          "cubeFile">cube.csv.gz</Parameter>
+    </Analytic>
+
+    <Analytic type="xva">
+      <Parameter name=                 "active">Y</Parameter>
+      <Parameter name=           "baseCurrency">JPY</Parameter>
+      <Parameter name=               "quantile">0.95</Parameter>
+      <Parameter name=       "exposureProfiles">Y</Parameter>
+      <Parameter name="exposureProfilesByTrade">Y</Parameter>
+      <Parameter name=                    "cva">Y</Parameter>
+      <Parameter name=                    "dva">N</Parameter>
+      <Parameter name=                    "fva">N</Parameter>
+      <Parameter name=                  "colva">N</Parameter>
+      <!-- xml,csvファイル -->
+      <Parameter name=     "csaFile">netting.xml</Parameter>
+      <Parameter name=    "cubeFile">cube.csv.gz</Parameter>
+      <Parameter name="scenarioFile">senaData.csv.gz</Parameter>
+      <!-- outputファイル -->
+      <Parameter name="rawCubeOutputFile">rawcube.csv</Parameter>
+      <Parameter name="netCubeOutputFile">netcube.csv</Parameter>
+    </Analytic>
+  </Analytics>
+</ORE>

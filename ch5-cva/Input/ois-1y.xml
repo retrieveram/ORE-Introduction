@@ -1,0 +1,72 @@
+<Portfolio>
+  <Trade id="OIS-1y">
+    <TradeType>Swap</TradeType>
+    <Envelope>
+      <CounterParty>CPTY-A</CounterParty>
+      <NettingSetId>CPTY-An</NettingSetId>
+    </Envelope>
+
+    <SwapData>
+      <LegData>
+        <LegType>Fixed</LegType>
+        <Payer>false</Payer>
+        <Currency>JPY</Currency>
+        <FixedLegData>
+          <Rates>
+            <Rate>0.010</Rate>
+          </Rates>
+        </FixedLegData>
+        <Notionals>
+          <Notional>10000000.00</Notional>
+        </Notionals>
+        <ScheduleData>
+          <Rules>
+            <StartDate>20220823</StartDate>
+            <EndDate>20230823</EndDate>
+            <Tenor>1Y</Tenor>
+            <Calendar>Japan</Calendar>
+            <Convention>MF</Convention>
+            <TermConvention>MF</TermConvention>
+
+          </Rules>
+        </ScheduleData>
+        <DayCounter>A365</DayCounter>
+        <PaymentConvention>MF</PaymentConvention>
+        <PaymentLag>2</PaymentLag>
+      </LegData>
+
+      <LegData>
+        <LegType>Floating</LegType>
+        <Payer>true</Payer>
+        <Currency>JPY</Currency>
+        <FloatingLegData>
+          <Index>JPY-TONAR</Index>
+          <Spreads>
+            <Spread>0.000000</Spread>
+          </Spreads>
+          <FixingDays>0</FixingDays>
+        </FloatingLegData>
+        <Notionals>
+          <Notional>10000000.00</Notional>
+        </Notionals>
+        <ScheduleData>
+          <Rules>
+            <StartDate>20220823</StartDate>
+            <EndDate>20230823</EndDate>
+            <Tenor>1Y</Tenor>
+            <Calendar>Japan</Calendar>
+            <Convention>MF</Convention>
+            <TermConvention>MF</TermConvention>
+            <!-- <Rule>Backward</Rule> -->
+            <!-- <EndOfMonth/> -->
+            <!-- <FirstDate/> -->
+            <!-- <LastDate/> -->
+          </Rules>
+        </ScheduleData>
+        <DayCounter>A365</DayCounter>
+        <PaymentConvention>MF</PaymentConvention>
+        <PaymentLag>2</PaymentLag>
+      </LegData>
+    </SwapData>
+  </Trade>
+</Portfolio>

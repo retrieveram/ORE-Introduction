@@ -1,0 +1,60 @@
+<Simulation>
+  <Parameters>
+    <Samples>3</Samples>
+    <Grid>3,6M</Grid>
+    <Calendar>Japan</Calendar>
+    <DayCounter>Actual/365 (Fixed)</DayCounter>
+    <Sequence>MersenneTwister</Sequence>
+    <Seed>1</Seed>
+  </Parameters>
+
+  <Market>
+    <BaseCurrency>JPY</BaseCurrency>
+    <Currencies>
+      <Currency>JPY</Currency>
+    </Currencies>
+
+    <Indices>
+      <Index>JPY-TONAR</Index>
+    </Indices>
+    <YieldCurves>
+      <Configuration>
+        <Tenors>1D,6M,1Y,2Y,3Y</Tenors>
+        <Interpolation>LogLinear</Interpolation>
+        <Extrapolation>Y</Extrapolation>
+      </Configuration>
+    </YieldCurves>
+
+    <AggregationScenarioDataIndices>
+      <Index>JPY-TONAR</Index>
+    </AggregationScenarioDataIndices>
+  </Market>
+
+  <CrossAssetModel>
+    <DomesticCcy>JPY</DomesticCcy>
+    <Currencies>
+      <Currency>JPY</Currency>
+    </Currencies>
+    <InterestRateModels>
+      <LGM ccy='default'>
+        <CalibrationType>Bootstrap</CalibrationType>
+        <Volatility>
+          <Calibrate>N</Calibrate>
+          <VolatilityType>Hagan</VolatilityType>
+          <ParamType>Constant</ParamType>
+          <TimeGrid/>
+          <InitialValue>0.01</InitialValue>
+        </Volatility>
+        <Reversion>
+          <Calibrate>N</Calibrate>
+          <ReversionType>HullWhite</ReversionType>
+          <ParamType>Constant</ParamType>
+          <TimeGrid/>
+          <InitialValue>0.03</InitialValue>
+        </Reversion>
+      </LGM>
+    </InterestRateModels>
+    <Discretization>Exact</Discretization>
+    <BootstrapTolerance>0.0001</BootstrapTolerance>
+  </CrossAssetModel>
+</Simulation>
