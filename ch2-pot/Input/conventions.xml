@@ -1,0 +1,21 @@
+<Conventions>
+  <Deposit>
+    <Id>JPY-TONAR-CONVENTIONS</Id>
+    <IndexBased>true</IndexBased>
+    <Index>JPY-TONAR</Index>
+  </Deposit>
+
+  <OIS>
+    <Id>JPY-OIS-CONVENTIONS</Id>
+    <Index>JPY-TONAR</Index>
+    <FixedFrequency>Annual</FixedFrequency>
+    <FixedDayCounter>A365</FixedDayCounter>
+    <!-- <FixedConvention>MF</FixedConvention> -->
+    <!-- <FixedPaymentConvention>MF</FixedPaymentConvention> -->
+    <!-- <Rule>Backward</Rule> -->
+    <!-- <EOM>true</EOM> -->
+    <SpotLag>2</SpotLag>
+    <PaymentLag>2</PaymentLag>
+    <RateCutoff>0</RateCutoff>
+  </OIS>
+</Conventions>
