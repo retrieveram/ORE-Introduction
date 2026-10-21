@@ -1,0 +1,31 @@
+<ORE>
+  <Setup>
+    <Parameter name=  "asofDate">2022-08-19</Parameter>
+    <Parameter name= "inputPath">Input</Parameter>
+    <Parameter name="outputPath">Output</Parameter>
+	  <Parameter name=   "logFile">log.txt</Parameter>
+
+    <!-- Txtファイル -->
+    <Parameter name=    "marketDataFile">market.txt</Parameter>
+    <Parameter name=    "fixingDataFile">fixings.txt</Parameter>
+    <Parameter name="implyTodaysFixings">N</Parameter>
+    <!-- xmlファイル -->
+    <Parameter name=   "conventionsFile">conventions.xml</Parameter>
+    <Parameter name=   "curveConfigFile">crvConfig.xml</Parameter>
+    <Parameter name=  "marketConfigFile">tdyMarket.xml</Parameter>
+    <Parameter name=     "portfolioFile">ois-2y.xml</Parameter>
+    <Parameter name="pricingEnginesFile">prcEngine.xml</Parameter>
+  </Setup>
+
+  <Analytics>
+    <Analytic type="sensitivity">
+      <Parameter name=               "active">Y</Parameter>
+      <!-- xmlファイル -->
+      <Parameter name="sensitivityConfigFile">sensiConfig.xml</Parameter>
+      <Parameter name=     "marketConfigFile">simConfig.xml</Parameter>
+      <!-- csvファイル -->
+      <Parameter name=   "scenarioOutputFile">scenario.csv</Parameter>
+      <Parameter name="sensitivityOutputFile">sensitivity.csv</Parameter>
+    </Analytic>
+  </Analytics>
+</ORE>

@@ -1,0 +1,9 @@
+<TodaysMarket>
+  <DiscountingCurves id="default">
+    <DiscountingCurve currency="JPY">Yield/JPY/JPY-TONAR</DiscountingCurve>
+  </DiscountingCurves>
+
+  <IndexForwardingCurves id="default">
+    <Index name="JPY-TONAR">Yield/JPY/JPY-TONAR</Index>
+  </IndexForwardingCurves>
+</TodaysMarket>

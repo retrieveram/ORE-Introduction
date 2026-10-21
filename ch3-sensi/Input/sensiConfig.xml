@@ -1,0 +1,19 @@
+<SensitivityAnalysis>
+  <DiscountCurves>
+    <DiscountCurve ccy='JPY'>
+      <ShiftType>Absolute</ShiftType>
+      <ShiftSize>0.0001</ShiftSize>
+      <ShiftTenors>1D,6M,1Y,2Y,3Y</ShiftTenors>
+      <ShiftScheme>Forward</ShiftScheme>
+    </DiscountCurve>
+  </DiscountCurves>
+
+  <IndexCurves>
+    <IndexCurve index='JPY-TONAR'>
+      <ShiftType>Absolute</ShiftType>
+      <ShiftSize>0.0001</ShiftSize>
+      <ShiftTenors>1D,6M,1Y,2Y,3Y</ShiftTenors>
+      <ShiftScheme>Forward</ShiftScheme>
+    </IndexCurve>
+  </IndexCurves>
+</SensitivityAnalysis>

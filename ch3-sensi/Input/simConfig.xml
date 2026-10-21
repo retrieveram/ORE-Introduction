@@ -1,0 +1,20 @@
+<Simulation>
+  <Market>
+    <BaseCurrency>JPY</BaseCurrency>
+    <Currencies>
+      <Currency>JPY</Currency>
+    </Currencies>
+
+    <Indices>
+      <Index>JPY-TONAR</Index>
+    </Indices>
+
+    <YieldCurves>
+      <Configuration>
+        <Tenors>1D,6M,1Y,2Y,3Y</Tenors>
+        <Interpolation>LogLinear</Interpolation>
+        <Extrapolation>Y</Extrapolation>
+      </Configuration>
+    </YieldCurves>
+  </Market>
+</Simulation>
