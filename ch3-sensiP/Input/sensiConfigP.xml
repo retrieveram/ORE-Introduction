@@ -1,0 +1,33 @@
+<SensitivityAnalysis>
+  <DiscountCurves>
+    <DiscountCurve ccy='JPY'>
+      <ShiftType>Absolute</ShiftType>
+      <ShiftSize>0.0001</ShiftSize>
+      <ShiftTenors>1D,6M,1Y,2Y,3Y</ShiftTenors>
+      <ParConversion>
+        <Conventions>
+          <Convention id="DEP">JPY-TONAR-CONVENTIONS</Convention>
+          <Convention id="OIS">JPY-OIS-CONVENTIONS</Convention>
+        </Conventions>
+        <Instruments>DEP,OIS,OIS,OIS,OIS</Instruments>
+        <SingleCurve>true</SingleCurve>
+      </ParConversion>
+    </DiscountCurve>
+  </DiscountCurves>
+
+  <IndexCurves>
+    <IndexCurve index='JPY-TONAR'>
+      <ShiftType>Absolute</ShiftType>
+      <ShiftSize>0.0001</ShiftSize>
+      <ShiftTenors>1D,6M,1Y,2Y,3Y</ShiftTenors>
+      <ParConversion>
+        <Conventions>
+          <Convention id="DEP">JPY-TONAR-CONVENTIONS</Convention>
+          <Convention id="OIS">JPY-OIS-CONVENTIONS</Convention>
+        </Conventions>
+        <Instruments>DEP,OIS,OIS,OIS,OIS</Instruments>
+        <SingleCurve>true</SingleCurve>
+      </ParConversion>
+    </IndexCurve>
+  </IndexCurves>
+</SensitivityAnalysis>
