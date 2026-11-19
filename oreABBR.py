@@ -27,16 +27,20 @@ def hline(ax, tgtN):                                   # x=tgtNに水平線
   ax.axhline(tgtN,color="black",linestyle="--",linewidth=0.5)
 def vline(ax, tgtN):                                   # x=tgtNに垂直線
   ax.axvline(tgtN,color="black",linestyle=":",linewidth=0.5)
-def nbShow(ax, tgtN, locate=(-40,5)):
+def nbShow(ax, tgtN,       locate=(-40,5)):
   ax.annotate(f'{tgtN:.4f}',(tgtN,0),locate,'data','offset points')
+def txShow(ax, tgtN, txt, locate=(-40, 5)):
+  ax.annotate(txt,          (tgtN,0),locate,'data','offset points')
 def nbShowY(ax, tgtN, locate=(0,0)):
   ax.annotate(f'{tgtN:.4f}',(0,tgtN),locate,'data','offset points')
+def cText(ax, txt, locate=(0.5, 0.5)):                # 図の中央に文字を表示
+    ax.text(*locate, txt, transform=ax.transAxes,ha='center', va='center')
 def lgD(ax):                                          # labelの指定の有無をチェック
   for aa in np.atleast_1d(ax):
     hdl,_ = aa.get_legend_handles_labels()
     if hdl: aa.legend()
 def gdShow(ax,linewidth=1):                            # グリッドshow
-  for aa in np.atleast_1d(ax): aa.grid(linestyle='--',linewidth=1)
+  for aa in np.atleast_1d(ax): aa.grid(linestyle='--',linewidth=linewidth)
   plt.tight_layout(); plt.show()
 
 #---- C. numpy初期設定 5桁表示と配列短縮形, 切捨て ----
@@ -214,14 +218,9 @@ cmpdCMP =  ql.Compounded
 cmpdCNT =  ql.Continuous
 cmpdSPL =  ql.Simple
 
-# swap: pay/recieve, option: put/call
+# swap: pay/recieve
 swPAY   = ql.Swap.Payer       #  1
 swRCV   = ql.Swap.Receiver    # -1
-opCL    = ql.Option.Call      #  1
-opPT    = ql.Option.Put       # -1
-oCL,oPT = opCL, opPT          #重複
-sptDLT  = ql.DeltaVolQuote.Spot
-fwdDLT  = ql.DeltaVolQuote.Fwd
 cpnRT0  = 0.0
 spdRT0  = 0.0
 gr1     = 1.0              # gearing
@@ -286,6 +285,14 @@ def mtGsRNG(nSeed, nRnd):
 #-------------------------------------------------------
 # オプション, プロセス, エンジン
 #-------------------------------------------------------
+opCL    = ql.Option.Call                      #  1
+opPT    = ql.Option.Put                       # -1
+oCL,oPT = opCL, opPT                          # 重複定義
+sptDLT  = ql.DeltaVolQuote.Spot               # デルタタイプ
+fwdDLT  = ql.DeltaVolQuote.Fwd
+pasDLT  = ql.DeltaVolQuote.PaSpot
+amFWD   = ql.DeltaVolQuote.AtmFwd             # ATMタイプ
+amDN    = ql.DeltaVolQuote.AtmDeltaNeutral
 def vPoff(pc, stkPR):       return ql.PlainVanillaPayoff(pc,stkPR)
 def excE(mDT):              return ql.EuropeanExercise(mDT)
 def excA(sDT,eDT):          return ql.AmericanExercise(sDT, eDT)
